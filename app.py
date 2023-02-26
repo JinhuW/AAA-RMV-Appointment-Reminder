@@ -320,11 +320,12 @@ def main():
   
   # print(f"Message Content:\n {message_content}\n")
   # print("************************Sending appointment result************************\n")
-  message_content = "Test action"
-  if sender_email_pass and sender_email:
-    send_email("AAA reservation notification", message_content, "jinhuwang1127@gmail.com")
+  # message_content = "Test action"
+  # if sender_email_pass and sender_email:
+  #   send_email("AAA reservation notification", message_content, "jinhuwang1127@gmail.com")
   # if sms_token:
   #   sendSMSNotification(f"AAA reservation notification \n {message_content}", ["+18484666289"])
+  print(sender_email)
   env_vars = os.environ
 
   # Print all environment variables and their values
