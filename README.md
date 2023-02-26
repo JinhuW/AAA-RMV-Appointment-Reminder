@@ -41,3 +41,10 @@ Note:
 5. Push to origin.
 6. fill the .env file and wait for the action to run as scheduled
 7. Uncomment the schedule in the github action configuration.
+
+
+# Preview
+## Email:
+![email](/assets/email.jpg)
+
+## Text:
