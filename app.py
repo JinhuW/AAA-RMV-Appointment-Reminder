@@ -331,7 +331,6 @@ def main():
     send_email("AAA reservation notification", message_content, TARGET_EMAIL)
   if sms_token:
     sendSMSNotification(f"AAA reservation notification \n {message_content}", [TARGET_PHONE])
-
   print("*****************************Done******************************************\n")
 
 if __name__ == "__main__":
