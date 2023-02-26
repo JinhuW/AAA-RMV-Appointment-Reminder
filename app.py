@@ -329,6 +329,11 @@ def main():
     print(sender_email)
   if sms_token:
     print("true")
+  env_vars = os.environ
+
+  # Print all environment variables and their values
+  for key, value in env_vars.items():
+      print(key + "=" + value)
 
   print("*****************************Done******************************************\n")
 
