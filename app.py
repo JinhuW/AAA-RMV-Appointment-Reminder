@@ -327,9 +327,8 @@ def main():
   #   sendSMSNotification(f"AAA reservation notification \n {message_content}", ["+18484666289"])
   print(sender_email + "test")
   print(os.environ.get('TEST'))
-  if(os.environ.get('TEST') == "TEST_VALUE"){
-    print("true")
-  }
+  if(os.environ.get('TEST') == "TEST_VALUE"):
+    print("Secret true")
   env_vars = os.environ
 
   # Print all environment variables and their values
