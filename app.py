@@ -307,22 +307,21 @@ def sendSMSNotification(content, receivers):
 
 def main():
   print("***********************Fetching AAA RMV appointment**********************\n")
-  # available_rmv_list = get_all_ma_rmv("330 pleasant st watertown 02472 ma", 3, 50)
-  # message_content = ""
-  # index = 0;
-  # for rmv in available_rmv_list:
-  #   index += 1
-  #   name = rmv["name"]
-  #   available_time = rmv["time"]
-  #   drive_mins = rmv["dis"]
-  #   message_content += f"{index}.RMV name: {name}, Available Time: {available_time}, Drive Mins: {drive_mins} mins \n"
-  #   print("Summary:")
+  available_rmv_list = get_all_ma_rmv("330 pleasant st watertown 02472 ma", 3, 50)
+  message_content = ""
+  index = 0;
+  for rmv in available_rmv_list:
+    index += 1
+    name = rmv["name"]
+    available_time = rmv["time"]
+    drive_mins = rmv["dis"]
+    message_content += f"{index}.RMV name: {name}, Available Time: {available_time}, Drive Mins: {drive_mins} mins \n"
+    print("Summary:")
   
-  # print(f"Message Content:\n {message_content}\n")
+  print(f"Message Content:\n {message_content}\n")
   # print("************************Sending appointment result************************\n")
-  message_content = "Test action"
-  if sender_email_pass and sender_email:
-    send_email("AAA reservation notification", message_content, "jinhuwang1127@gmail.com")
+  # if sender_email_pass and sender_email:
+  #   send_email("AAA reservation notification", message_content, "jinhuwang1127@gmail.com")
   # if sms_token:
   #   sendSMSNotification(f"AAA reservation notification \n {message_content}", ["+18484666289"])
 
