@@ -325,6 +325,10 @@ def main():
   #   send_email("AAA reservation notification", message_content, "jinhuwang1127@gmail.com")
   # if sms_token:
   #   sendSMSNotification(f"AAA reservation notification \n {message_content}", ["+18484666289"])
+  if sender_email_pass and sender_email:
+    print(sender_email)
+  if sms_token:
+    print("true")
 
   print("*****************************Done******************************************\n")
 
