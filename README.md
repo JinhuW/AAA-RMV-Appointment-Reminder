@@ -48,3 +48,4 @@ Note:
 ![email](/assets/email.jpg)
 
 ## Text:
+![text](/assets/text.jpg)
