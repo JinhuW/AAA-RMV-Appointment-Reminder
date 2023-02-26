@@ -325,7 +325,7 @@ def main():
   #   send_email("AAA reservation notification", message_content, "jinhuwang1127@gmail.com")
   # if sms_token:
   #   sendSMSNotification(f"AAA reservation notification \n {message_content}", ["+18484666289"])
-  print(sender_email)
+  print(sender_email + "test")
   env_vars = os.environ
 
   # Print all environment variables and their values
