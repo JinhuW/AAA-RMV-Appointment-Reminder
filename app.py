@@ -323,8 +323,8 @@ def main():
     available_time = rmv["time"]
     drive_mins = rmv["dis"]
     message_content += f"{index}.RMV name: {name}, Available Time: {available_time}, Drive Mins: {drive_mins} mins \n"
-    print("Summary:")
   
+  print("Summary:")
   print(f"Message Content:\n {message_content}\n")
   print("************************Sending appointment result************************\n")
   if sender_email_pass and sender_email:

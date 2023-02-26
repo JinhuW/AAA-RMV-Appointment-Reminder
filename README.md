@@ -23,7 +23,7 @@ Please use this when you really need it!!
 
 Note: 
 - The email can not use `GMAIL` due to the security policy. you also need to disable two the two steps verification
-- All this variable could also set in the action secret.
+- All these variables could also be set in the action secret.
 
 ### 🚚 Service variable
 1. HOME_ADDRESS: `copy your home address from google map` 
@@ -40,3 +40,4 @@ Note:
 4. Set the origin URL to that of your newly-created private repository.
 5. Push to origin.
 6. fill the .env file and wait for the action to run as scheduled
+7. Uncomment the schedule in the github action configuration.
