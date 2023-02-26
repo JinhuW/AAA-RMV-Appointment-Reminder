@@ -307,8 +307,8 @@ def sendSMSNotification(content, receivers):
 
 def main():
   HOME_ADDRESS = os.environ.get("HOME_ADDRESS")
-  ACCEPTED_DRIVE_TIME = os.environ.get("ACCEPTED_DRIVE_TIME") or 200
-  TOP_RES = os.environ.get("TOP_RES") or 1000
+  ACCEPTED_DRIVE_TIME = int(os.environ.get("ACCEPTED_DRIVE_TIME") or 200)
+  TOP_RES = int(os.environ.get("TOP_RES") or 1000)
   TARGET_EMAIL = os.environ.get("TARGET_EMAIL")
   TARGET_PHONE = os.environ.get("TARGET_PHONE")
   if(HOME_ADDRESS == ""):
