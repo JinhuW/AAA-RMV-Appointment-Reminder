@@ -1,0 +1,19 @@
+name: My workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build Docker image
+        run: docker build -t rmv-reminder .
+      - name: Run Docker container
+        env:
+          MY_ENV_VAR: ${{ secrets.MY_SECRET }}
+        run: docker run -e MY_ENV_VAR rmv-reminder
