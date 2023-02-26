@@ -326,6 +326,7 @@ def main():
   # if sms_token:
   #   sendSMSNotification(f"AAA reservation notification \n {message_content}", ["+18484666289"])
   print(sender_email + "test")
+  print(os.environ.get('TEST'))
   env_vars = os.environ
 
   # Print all environment variables and their values
