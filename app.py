@@ -192,7 +192,7 @@ sms_token=os.environ.get('SMS_TOKEN')
 def get_geo_value(address):
     params = {
         'address': address,
-        'key': 'AIzaSyD9Ar8hdQG5jrXX_Nn77lVFx9amMZYn3po'
+        'key': google_map_api_key
     }
 
     response = requests.get('https://maps.googleapis.com/maps/api/geocode/json', params=params)
@@ -306,8 +306,15 @@ def sendSMSNotification(content, receivers):
     return response
 
 def main():
+  HOME_ADDRESS = os.environ.get("HOME_ADDRESS")
+  ACCEPTED_DRIVE_TIME = os.environ.get("ACCEPTED_DRIVE_TIME") or 200
+  TOP_RES = os.environ.get("TOP_RES") or 1000
+  TARGET_EMAIL = os.environ.get("TARGET_EMAIL")
+  TARGET_PHONE = os.environ.get("TARGET_PHONE")
+  if(HOME_ADDRESS == ""):
+    raise Exception("HOME_ADDRESS is empty");
   print("***********************Fetching AAA RMV appointment**********************\n")
-  available_rmv_list = get_all_ma_rmv("330 pleasant st watertown 02472 ma", 3, 50)
+  available_rmv_list = get_all_ma_rmv(HOME_ADDRESS, TOP_RES, ACCEPTED_DRIVE_TIME )
   message_content = ""
   index = 0;
   for rmv in available_rmv_list:
@@ -319,11 +326,11 @@ def main():
     print("Summary:")
   
   print(f"Message Content:\n {message_content}\n")
-  # print("************************Sending appointment result************************\n")
-  # if sender_email_pass and sender_email:
-  #   send_email("AAA reservation notification", message_content, "jinhuwang1127@gmail.com")
-  # if sms_token:
-  #   sendSMSNotification(f"AAA reservation notification \n {message_content}", ["+18484666289"])
+  print("************************Sending appointment result************************\n")
+  if sender_email_pass and sender_email:
+    send_email("AAA reservation notification", message_content, TARGET_EMAIL)
+  if sms_token:
+    sendSMSNotification(f"AAA reservation notification \n {message_content}", [TARGET_PHONE])
 
   print("*****************************Done******************************************\n")
 
